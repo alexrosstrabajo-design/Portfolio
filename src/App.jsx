@@ -57,7 +57,7 @@ export default function App() {
         beamWidth={1}
         beamHeight={30}
         beamNumber={30}
-        lightColor="#ff0000"
+        lightColor="#00ff00"
         speed={2}
         noiseIntensity={4}
         scale={0.31}
