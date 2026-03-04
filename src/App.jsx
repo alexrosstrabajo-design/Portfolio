@@ -59,7 +59,7 @@ export default function App() {
         beamNumber={30}
         lightColor="#ffffff"
         speed={2}
-        noiseIntensity={0}
+        noiseIntensity={4}
         scale={0.31}
         rotation={87.5}
         />
