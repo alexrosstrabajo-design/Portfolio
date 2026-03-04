@@ -54,7 +54,7 @@ export default function App() {
       {/* ── Beams background (fixed, behind everything) ── */}
       <div style={{ position: "fixed", inset: 0, zIndex: 0, background: "#000000", overflow: "hidden" }}>
         <Beams
-        beamWidth={1}
+        beamWidth={30}
         beamHeight={30}
         beamNumber={30}
         lightColor="#ffffff"
