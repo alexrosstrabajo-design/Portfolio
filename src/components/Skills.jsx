@@ -1,5 +1,4 @@
 import LogoLoop from './LogoLoop';
-import GradualBlur from './GradualBlur';
 import t from '../translations';
 import {
   SiReact, SiJavascript, SiHtml5, SiVite, SiNodedotjs, SiBootstrap, SiGit, SiGithub,
@@ -47,16 +46,11 @@ const row2Items = [
   { node: <SiWireshark />,  title: 'Wireshark' },
 ];
 
-const rowWrap = {
-  width: '100%',
-  position: 'relative',
-  overflow: 'hidden',
-};
-
 const Skills = ({ isDark, lang }) => {
-  const tx   = t[lang].skills;
-  const row1 = makeLabeled(row1Items);
-  const row2 = makeLabeled(row2Items);
+  const tx        = t[lang].skills;
+  const fadeColor = isDark ? "#000000" : "#efefef";
+  const row1      = makeLabeled(row1Items);
+  const row2      = makeLabeled(row2Items);
 
   return (
     <section id="skills" style={{
@@ -80,24 +74,14 @@ const Skills = ({ isDark, lang }) => {
         </h2>
       </div>
 
-      {/* Row 1 */}
-      <div style={{ ...rowWrap, marginBottom: '48px' }}>
-        <LogoLoop
-          logos={row1} speed={80} direction="left" logoHeight={70} gap={56}
-          hoverSpeed={0} scaleOnHover ariaLabel={tx.aria1}
-        />
-        <GradualBlur target="parent" position="left"  height="8rem" strength={3} divCount={5} curve="bezier" opacity={1} />
-        <GradualBlur target="parent" position="right" height="8rem" strength={3} divCount={5} curve="bezier" opacity={1} />
+      <div style={{ width: '100%', marginBottom: '48px' }}>
+        <LogoLoop logos={row1} speed={80} direction="left" logoHeight={70} gap={56}
+          hoverSpeed={0} scaleOnHover fadeOut fadeOutColor={fadeColor} ariaLabel={tx.aria1} />
       </div>
 
-      {/* Row 2 */}
-      <div style={rowWrap}>
-        <LogoLoop
-          logos={row2} speed={80} direction="right" logoHeight={70} gap={56}
-          hoverSpeed={0} scaleOnHover ariaLabel={tx.aria2}
-        />
-        <GradualBlur target="parent" position="left"  height="8rem" strength={3} divCount={5} curve="bezier" opacity={1} />
-        <GradualBlur target="parent" position="right" height="8rem" strength={3} divCount={5} curve="bezier" opacity={1} />
+      <div style={{ width: '100%' }}>
+        <LogoLoop logos={row2} speed={80} direction="right" logoHeight={70} gap={56}
+          hoverSpeed={0} scaleOnHover fadeOut fadeOutColor={fadeColor} ariaLabel={tx.aria2} />
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import About        from "./components/About";
 import Projects     from "./components/Projects";
 import Skills       from "./components/Skills";
 import Contact      from "./components/Contact";
+import GradualBlur  from "./components/GradualBlur";
 
 export default function App() {
   const [active, setActive] = useState("Home");
@@ -44,6 +45,7 @@ export default function App() {
 
       <TargetCursor spinDuration={2} hoverDuration={0.2} hideDefaultCursor parallaxOn />
 
+      {/* Beams background */}
       <div style={{
         position: "fixed", inset: 0, zIndex: 0,
         background: "#000000", overflow: "hidden",
@@ -54,6 +56,19 @@ export default function App() {
         <Beams beamWidth={1} beamHeight={30} beamNumber={30}
           lightColor="#ffffff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
       </div>
+
+      {/* Fixed bottom blur — elements fade in as user scrolls up */}
+      <GradualBlur
+        target="page"
+        position="bottom"
+        height="10rem"
+        strength={2.5}
+        divCount={6}
+        curve="bezier"
+        exponential
+        opacity={1}
+        style={{ zIndex: 50 }}
+      />
 
       <Nav
         active={active} setActive={setActive}

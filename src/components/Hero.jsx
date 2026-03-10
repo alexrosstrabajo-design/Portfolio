@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import t from "../translations";
-import GradualBlur from "./GradualBlur";
 
 const Hero = ({ lang }) => {
   const tx = t[lang].hero;
@@ -44,7 +43,7 @@ const Hero = ({ lang }) => {
       minHeight: "100vh", display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
       textAlign: "center", padding: "0 24px",
-      position: "relative", zIndex: 1, overflow: "hidden",
+      position: "relative", zIndex: 1,
     }}>
 
       {/* Badge */}
@@ -139,18 +138,6 @@ const Hero = ({ lang }) => {
           {tx.cta3}
         </a>
       </div>
-
-      {/* Gradual blur fade at bottom */}
-      <GradualBlur
-        target="parent"
-        position="bottom"
-        height="10rem"
-        strength={2.5}
-        divCount={6}
-        curve="bezier"
-        exponential
-        opacity={1}
-      />
 
       <style>{`
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
