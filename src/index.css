@@ -11,46 +11,127 @@ html {
 }
 
 /* ── Dark mode (default) ── */
-:root, [data-theme="dark"] {
+:root,
+[data-theme="dark"] {
   --bg: #050508;
-  --bg-secondary: #0d0d12;
   --fg: #ffffff;
   --fg-muted: rgba(255, 255, 255, 0.4);
+  --fg-subtle: rgba(255, 255, 255, 0.3);
+  --fg-faint: rgba(255, 255, 255, 0.2);
+  --fg-dim: rgba(255, 255, 255, 0.15);
+  --fg-ghost: rgba(255, 255, 255, 0.1);
   --border: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 255, 255, 0.35);
+
+  /* Nav */
+  --nav-bg: rgba(255, 255, 255, 0.04);
+  --nav-bg-scrolled: rgba(0, 0, 0, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.12);
+  --nav-active-bg: rgba(255, 255, 255, 0.12);
+  --nav-divider: rgba(255, 255, 255, 0.15);
+
+  /* Glass cards */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.06);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --glass-shadow-hover: 0 8px 40px rgba(255, 255, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Buttons */
+  --btn-primary-bg: #ffffff;
+  --btn-primary-fg: #000000;
+  --btn-secondary-border: rgba(255, 255, 255, 0.2);
+  --btn-secondary-fg: rgba(255, 255, 255, 0.65);
+
+  /* Tags */
+  --tag-bg: rgba(255, 255, 255, 0.05);
+  --tag-border: rgba(255, 255, 255, 0.12);
+  --tag-fg: rgba(255, 255, 255, 0.4);
+
+  /* Badge */
+  --badge-bg: rgba(255, 255, 255, 0.06);
+  --badge-border: rgba(255, 255, 255, 0.18);
+
+  /* Accent bar */
+  --accent-bar: #ffffff;
+  --accent-bar-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+
+  /* Skills */
+  --logo-color: #ffffff;
+  --logo-label: rgba(255, 255, 255, 0.3);
+  --fade-color: #000000;
+
+  /* Scrollbar */
   --scrollbar-track: #000;
   --scrollbar-thumb: rgba(255, 255, 255, 0.2);
-  --nav-bg-scrolled: rgba(0, 0, 0, 0.85);
-  --nav-bg: rgba(255, 255, 255, 0.04);
 }
 
 /* ── Light mode ── */
 [data-theme="light"] {
-  --bg: #f0f0f0;
-  --bg-secondary: #e4e4e4;
+  --bg: #efefef;
   --fg: #0a0a0a;
-  --fg-muted: rgba(0, 0, 0, 0.4);
-  --border: rgba(0, 0, 0, 0.12);
+  --fg-muted: rgba(0, 0, 0, 0.45);
+  --fg-subtle: rgba(0, 0, 0, 0.35);
+  --fg-faint: rgba(0, 0, 0, 0.25);
+  --fg-dim: rgba(0, 0, 0, 0.18);
+  --fg-ghost: rgba(0, 0, 0, 0.1);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.3);
+
+  /* Nav */
+  --nav-bg: rgba(0, 0, 0, 0.04);
+  --nav-bg-scrolled: rgba(220, 220, 220, 0.92);
+  --nav-border: rgba(0, 0, 0, 0.12);
+  --nav-active-bg: rgba(0, 0, 0, 0.08);
+  --nav-divider: rgba(0, 0, 0, 0.15);
+
+  /* Glass cards */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-hover: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --glass-shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  /* Buttons */
+  --btn-primary-bg: #0a0a0a;
+  --btn-primary-fg: #ffffff;
+  --btn-secondary-border: rgba(0, 0, 0, 0.2);
+  --btn-secondary-fg: rgba(0, 0, 0, 0.6);
+
+  /* Tags */
+  --tag-bg: rgba(0, 0, 0, 0.04);
+  --tag-border: rgba(0, 0, 0, 0.1);
+  --tag-fg: rgba(0, 0, 0, 0.4);
+
+  /* Badge */
+  --badge-bg: rgba(0, 0, 0, 0.05);
+  --badge-border: rgba(0, 0, 0, 0.15);
+
+  /* Accent bar */
+  --accent-bar: #0a0a0a;
+  --accent-bar-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  /* Skills */
+  --logo-color: #0a0a0a;
+  --logo-label: rgba(0, 0, 0, 0.35);
+  --fade-color: #efefef;
+
+  /* Scrollbar */
   --scrollbar-track: #ddd;
   --scrollbar-thumb: rgba(0, 0, 0, 0.2);
-  --nav-bg-scrolled: rgba(220, 220, 220, 0.92);
-  --nav-bg: rgba(0, 0, 0, 0.04);
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: 'DM Mono', monospace;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 ::-webkit-scrollbar {
   width: 4px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   border-radius: 2px;
