@@ -11,15 +11,14 @@ import Skills       from "./components/Skills";
 import Contact      from "./components/Contact";
 
 export default function App() {
-  const [active, setActive]   = useState("Home");
-  const [isDark, setIsDark]   = useState(true);
+  const [active, setActive] = useState("Home");
+  const [isDark, setIsDark] = useState(true);
+  const [lang, setLang]     = useState("en");
 
-  /* Sync data-theme attribute on the root element */
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
   }, [isDark]);
 
-  /* Track which section is in view for the active nav link */
   useEffect(() => {
     const ids = ["home", "about", "projects", "skills", "contact"];
     const observer = new IntersectionObserver(
@@ -43,10 +42,8 @@ export default function App() {
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
 
-      {/* ── Custom cursor ── */}
       <TargetCursor spinDuration={2} hoverDuration={0.2} hideDefaultCursor parallaxOn />
 
-      {/* ── Beams background — fades out in light mode ── */}
       <div style={{
         position: "fixed", inset: 0, zIndex: 0,
         background: "#000000", overflow: "hidden",
@@ -54,32 +51,21 @@ export default function App() {
         transition: "opacity 0.5s ease",
         pointerEvents: "none",
       }}>
-        <Beams
-          beamWidth={1}
-          beamHeight={30}
-          beamNumber={30}
-          lightColor="#ffffff"
-          speed={2}
-          noiseIntensity={4}
-          scale={0.31}
-          rotation={87.5}
-        />
+        <Beams beamWidth={1} beamHeight={30} beamNumber={30}
+          lightColor="#ffffff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
       </div>
 
-      {/* ── Navigation ── */}
       <Nav
-        active={active}
-        setActive={setActive}
-        isDark={isDark}
-        setIsDark={setIsDark}
+        active={active} setActive={setActive}
+        isDark={isDark} setIsDark={setIsDark}
+        lang={lang} setLang={setLang}
       />
 
-      {/* ── Page sections ── */}
-      <Hero />
-      <About />
-      <Projects />
-      <Skills isDark={isDark} />
-      <Contact />
+      <Hero     lang={lang} />
+      <About    lang={lang} />
+      <Projects lang={lang} />
+      <Skills   isDark={isDark} lang={lang} />
+      <Contact  lang={lang} />
 
     </div>
   );

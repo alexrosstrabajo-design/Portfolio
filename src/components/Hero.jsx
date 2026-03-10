@@ -1,33 +1,43 @@
 import { useState, useEffect } from "react";
+import t from "../translations";
 
-const Hero = () => {
-  const [visible, setVisible] = useState(false);
-  const roles = ["Web Developer", "Database Designer", "Pentester"];
-  const [roleIdx, setRoleIdx]   = useState(0);
+const Hero = ({ lang }) => {
+  const tx = t[lang].hero;
+  const [visible, setVisible]     = useState(false);
+  const [roleIdx, setRoleIdx]     = useState(0);
   const [displayed, setDisplayed] = useState("");
-  const [typing, setTyping]     = useState(true);
+  const [typing, setTyping]       = useState(true);
 
   useEffect(() => { setTimeout(() => setVisible(true), 100); }, []);
 
+  // Reset typewriter when language changes
   useEffect(() => {
-    let t;
-    const current = roles[roleIdx];
+    setRoleIdx(0);
+    setDisplayed("");
+    setTyping(true);
+  }, [lang]);
+
+  useEffect(() => {
+    let timer;
+    const current = tx.roles[roleIdx];
     if (typing) {
       if (displayed.length < current.length) {
-        t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 75);
+        timer = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 75);
       } else {
-        t = setTimeout(() => setTyping(false), 2200);
+        timer = setTimeout(() => setTyping(false), 2200);
       }
     } else {
       if (displayed.length > 0) {
-        t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
+        timer = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
       } else {
-        setRoleIdx((roleIdx + 1) % roles.length);
+        setRoleIdx((roleIdx + 1) % tx.roles.length);
         setTyping(true);
       }
     }
-    return () => clearTimeout(t);
-  }, [displayed, typing, roleIdx]);
+    return () => clearTimeout(timer);
+  }, [displayed, typing, roleIdx, tx.roles]);
+
+  const bioLines = tx.bio.split("\n");
 
   return (
     <section id="home" style={{
@@ -40,8 +50,7 @@ const Hero = () => {
       {/* Badge */}
       <div style={{
         display: "inline-flex", alignItems: "center", gap: "8px",
-        background: "var(--badge-bg)",
-        border: "1px solid var(--badge-border)",
+        background: "var(--badge-bg)", border: "1px solid var(--badge-border)",
         borderRadius: "50px", padding: "6px 18px", marginBottom: "32px",
         opacity: visible ? 1 : 0, transform: visible ? "none" : "translateY(16px)",
         transition: "all 0.8s ease",
@@ -53,7 +62,7 @@ const Hero = () => {
           background: "var(--fg)", display: "inline-block",
           animation: "pulse 2s infinite",
         }} />
-        AVAILABLE FOR HIRE
+        {tx.badge}
       </div>
 
       {/* Name */}
@@ -84,8 +93,7 @@ const Hero = () => {
         fontSize: "14px", maxWidth: "440px", lineHeight: 1.9, marginBottom: "44px",
         opacity: visible ? 1 : 0, transition: "opacity 0.9s ease 0.45s",
       }}>
-        Student at ITESA · Building secure, efficient web applications.<br />
-        Growing. Learning. Adapting.
+        {bioLines[0]}<br />{bioLines[1]}
       </p>
 
       {/* CTA Buttons */}
@@ -100,7 +108,7 @@ const Hero = () => {
           fontFamily: "'Space Mono', monospace", fontSize: "12px", fontWeight: 700,
           letterSpacing: "0.5px", transition: "all 0.3s ease",
         }}>
-          Get In Touch
+          {tx.cta1}
         </a>
         <a href="#projects" className="cursor-target" style={{
           padding: "13px 30px", background: "transparent",
@@ -110,7 +118,25 @@ const Hero = () => {
           fontSize: "12px", backdropFilter: "blur(10px)",
           transition: "all 0.3s ease",
         }}>
-          View My Work
+          {tx.cta2}
+        </a>
+        <a href="/Alexander_Ross_Resume.pdf" download="Alexander_Ross_Resume.pdf"
+          className="cursor-target" style={{
+          padding: "13px 30px", background: "transparent",
+          border: "1px solid var(--btn-secondary-border)",
+          color: "var(--btn-secondary-fg)", borderRadius: "50px",
+          textDecoration: "none", fontFamily: "'Space Mono', monospace",
+          fontSize: "12px", backdropFilter: "blur(10px)",
+          transition: "all 0.3s ease",
+          display: "flex", alignItems: "center", gap: "8px",
+        }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          {tx.cta3}
         </a>
       </div>
 

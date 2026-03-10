@@ -1,4 +1,5 @@
 import LogoLoop from './LogoLoop';
+import t from '../translations';
 import {
   SiReact, SiJavascript, SiHtml5, SiVite, SiNodedotjs, SiBootstrap, SiGit, SiGithub,
   SiPython, SiFlask, SiMysql, SiPostgresql, SiLinux, SiKalilinux, SiWireshark
@@ -45,7 +46,8 @@ const row2Items = [
   { node: <SiWireshark />,  title: 'Wireshark' },
 ];
 
-const Skills = ({ isDark }) => {
+const Skills = ({ isDark, lang }) => {
+  const tx = t[lang].skills;
   const fadeColor = isDark ? "#000000" : "#efefef";
   const row1 = makeLabeled(row1Items);
   const row2 = makeLabeled(row2Items);
@@ -56,53 +58,30 @@ const Skills = ({ isDark }) => {
       justifyContent: 'center', padding: '120px 0',
       position: 'relative', zIndex: 1, flexDirection: 'column',
     }}>
-      {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '60px', padding: '0 24px' }}>
         <div style={{
           fontFamily: "'Space Mono', monospace", fontSize: '10px',
           color: 'var(--fg-dim)', letterSpacing: '3px', marginBottom: '10px',
         }}>
-          SKILLS
+          {tx.label}
         </div>
         <h2 style={{
           fontFamily: "'Space Mono', monospace",
           fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 700,
           color: 'var(--fg)', letterSpacing: '-0.5px', margin: 0,
         }}>
-          Tech Stack
+          {tx.title}
         </h2>
       </div>
 
-      {/* Row 1 — Frontend & Tooling */}
       <div style={{ width: '100%', marginBottom: '48px' }}>
-        <LogoLoop
-          logos={row1}
-          speed={80}
-          direction="left"
-          logoHeight={70}
-          gap={56}
-          hoverSpeed={0}
-          scaleOnHover
-          fadeOut
-          fadeOutColor={fadeColor}
-          ariaLabel="Frontend and tooling technologies"
-        />
+        <LogoLoop logos={row1} speed={80} direction="left" logoHeight={70} gap={56}
+          hoverSpeed={0} scaleOnHover fadeOut fadeOutColor={fadeColor} ariaLabel={tx.aria1} />
       </div>
 
-      {/* Row 2 — Backend & Security */}
       <div style={{ width: '100%' }}>
-        <LogoLoop
-          logos={row2}
-          speed={80}
-          direction="right"
-          logoHeight={70}
-          gap={56}
-          hoverSpeed={0}
-          scaleOnHover
-          fadeOut
-          fadeOutColor={fadeColor}
-          ariaLabel="Backend and security technologies"
-        />
+        <LogoLoop logos={row2} speed={80} direction="right" logoHeight={70} gap={56}
+          hoverSpeed={0} scaleOnHover fadeOut fadeOutColor={fadeColor} ariaLabel={tx.aria2} />
       </div>
     </section>
   );
