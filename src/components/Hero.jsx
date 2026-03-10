@@ -120,24 +120,6 @@ const Hero = ({ lang }) => {
         }}>
           {tx.cta2}
         </a>
-        <a href="/Alexander_Ross_Resume.pdf" download="Alexander_Ross_Resume.pdf"
-          className="cursor-target" style={{
-          padding: "13px 30px", background: "transparent",
-          border: "1px solid var(--btn-secondary-border)",
-          color: "var(--btn-secondary-fg)", borderRadius: "50px",
-          textDecoration: "none", fontFamily: "'Space Mono', monospace",
-          fontSize: "12px", backdropFilter: "blur(10px)",
-          transition: "all 0.3s ease",
-          display: "flex", alignItems: "center", gap: "8px",
-        }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          {tx.cta3}
-        </a>
       </div>
 
       <style>{`
