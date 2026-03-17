@@ -54,7 +54,7 @@ export default function App() {
         pointerEvents: "none",
       }}>
         <Beams beamWidth={1} beamHeight={30} beamNumber={30}
-          lightColor="#33ff00" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+          lightColor="#ffffff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
       </div>
 
       {/* Fixed bottom blur — elements fade in as user scrolls up */}
