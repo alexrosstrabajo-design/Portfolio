@@ -72,8 +72,8 @@ const Hero = ({ lang }) => {
         opacity: visible ? 1 : 0, transform: visible ? "none" : "translateY(24px)",
         transition: "all 0.9s ease 0.15s",
       }}>
-        Oliver<br />
-        <span style={{ color: "var(--fg-muted)" }}>Ortega</span>
+        Alexander<br />
+        <span style={{ color: "var(--fg-muted)" }}>Ross</span>
       </h1>
 
       {/* Typewriter */}
