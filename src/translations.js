@@ -30,7 +30,7 @@ const t = {
       live: "Live ↗",
       items: [
         { name: "TextNode", tagline: "Note Taking App",           desc: "A modern note-taking app to organize thoughts efficiently. Clean UI with full CRUD.", tags: ["JavaScript","React","Web App"], link: "https://Text-node.vercel.app", github: "https://github.com/alexrosstrabajo-design/TextNode" },
-        { name: "NetScan",  tagline: "Network Scanner Tool",      desc: "Python-based scanner that identifies active devices and open ports across a network.", tags: ["Python","Scapy","Network Security"], link: "#", github: "#" },
+        { name: "Automator AI", tagline: "AI Automation Platform",      desc: "An AI-powered conversational platform connected to Automator, featuring a sleek 3D interface built with Three.js.", tags: ["React","Three.js","OpenAI","Tailwind"], link: "https://agoar.vercel.app", github: "https://github.com/alexrosstrabajo-design/ai-chat" },
         { name: "InvDB",    tagline: "Database Management System",desc: "Inventory database with a Flask interface, SQL backend, and Bootstrap UI.", tags: ["SQL","Python","Flask","Bootstrap"], link: "#", github: "#" },
       ],
     },
@@ -79,7 +79,7 @@ const t = {
       live: "Ver ↗",
       items: [
         { name: "TextNode", tagline: "App de Notas",               desc: "App moderna de toma de notas con CRUD completo y UI limpia.", tags: ["JavaScript","React","Web App"], link: "https://Text-node.vercel.app", github: "https://github.com/alexrosstrabajo-design/TextNode" },
-        { name: "NetScan",  tagline: "Escáner de Red",             desc: "Escáner en Python que identifica dispositivos activos y puertos abiertos en una red.", tags: ["Python","Scapy","Seguridad de Red"], link: "#", github: "#" },
+        { name: "Automator AI", tagline: "Plataforma de Automatización IA",   desc: "Una plataforma conversacional impulsada por IA conectada a Automator, con una interfaz 3D moderna construida con Three.js.", tags: ["React","Three.js","OpenAI","Tailwind"], link: "https://agoar.vercel.app", github: "https://github.com/alexrosstrabajo-design/ai-chat" },
         { name: "InvDB",    tagline: "Sistema de Gestión de BD",   desc: "Base de datos de inventario con interfaz Flask, backend SQL y UI con Bootstrap.", tags: ["SQL","Python","Flask","Bootstrap"], link: "#", github: "#" },
       ],
     },
