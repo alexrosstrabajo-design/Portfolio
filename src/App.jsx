@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import "./index.css";
 
 import TargetCursor from "./components/TargetCursor";
-import Beams        from "./components/Beams";
-import Nav          from "./components/Nav";
-import Hero         from "./components/Hero";
-import About        from "./components/About";
-import Projects     from "./components/Projects";
-import Skills       from "./components/Skills";
-import Contact      from "./components/Contact";
-import GradualBlur  from "./components/GradualBlur";
+import Beams from "./components/Beams";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
+import GradualBlur from "./components/GradualBlur";
 
 export default function App() {
   const [active, setActive] = useState("Home");
   const [isDark, setIsDark] = useState(true);
-  const [lang, setLang]     = useState("en");
+  const [lang, setLang] = useState("en");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
@@ -48,13 +48,13 @@ export default function App() {
       {/* Beams background */}
       <div style={{
         position: "fixed", inset: 0, zIndex: 0,
-        background: "#ff0000ff", overflow: "hidden",
+        background: "#000000ff", overflow: "hidden",
         opacity: isDark ? 1 : 0,
         transition: "opacity 0.5s ease",
         pointerEvents: "none",
       }}>
         <Beams beamWidth={1} beamHeight={30} beamNumber={30}
-          lightColor="#ffffff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+          lightColor="#ff0000ff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
       </div>
 
       {/* Fixed bottom blur — elements fade in as user scrolls up */}
@@ -76,11 +76,11 @@ export default function App() {
         lang={lang} setLang={setLang}
       />
 
-      <Hero     lang={lang} />
-      <About    lang={lang} />
+      <Hero lang={lang} />
+      <About lang={lang} />
       <Projects lang={lang} />
-      <Skills   isDark={isDark} lang={lang} />
-      <Contact  lang={lang} />
+      <Skills isDark={isDark} lang={lang} />
+      <Contact lang={lang} />
 
     </div>
   );
