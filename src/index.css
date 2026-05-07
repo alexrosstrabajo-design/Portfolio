@@ -15,12 +15,12 @@ html {
 [data-theme="dark"] {
   --bg: #050508;
   --fg: #ffffff;
-  --fg-muted: rgba(255, 255, 255, 0.4);
-  --fg-subtle: rgba(255, 255, 255, 0.3);
-  --fg-faint: rgba(255, 255, 255, 0.2);
-  --fg-dim: rgba(255, 255, 255, 0.15);
-  --fg-ghost: rgba(255, 255, 255, 0.1);
-  --border: rgba(255, 255, 255, 0.12);
+  --fg-muted: rgba(255, 255, 255, 0.65);
+  --fg-subtle: rgba(255, 255, 255, 0.5);
+  --fg-faint: rgba(255, 255, 255, 0.4);
+  --fg-dim: rgba(255, 255, 255, 0.35);
+  --fg-ghost: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.15);
   --border-hover: rgba(255, 255, 255, 0.35);
 
   /* Nav */
@@ -57,7 +57,7 @@ html {
 
   /* Skills */
   --logo-color: #ffffff;
-  --logo-label: rgba(255, 255, 255, 0.3);
+  --logo-label: rgba(255, 255, 255, 0.55);
   --fade-color: #000000;
 
   /* Scrollbar */
