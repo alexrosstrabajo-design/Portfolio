@@ -15,26 +15,26 @@ html {
 [data-theme="dark"] {
   --bg: #050508;
   --fg: #ffffff;
-  --fg-muted: rgba(255, 255, 255, 0.65);
-  --fg-subtle: rgba(255, 255, 255, 0.5);
-  --fg-faint: rgba(255, 255, 255, 0.4);
-  --fg-dim: rgba(255, 255, 255, 0.35);
-  --fg-ghost: rgba(255, 255, 255, 0.15);
-  --border: rgba(255, 255, 255, 0.15);
-  --border-hover: rgba(255, 255, 255, 0.35);
+  --fg-muted: rgba(255, 255, 255, 0.95);
+  --fg-subtle: rgba(255, 255, 255, 0.85);
+  --fg-faint: rgba(255, 255, 255, 0.7);
+  --fg-dim: rgba(255, 255, 255, 0.6);
+  --fg-ghost: rgba(255, 255, 255, 0.35);
+  --border: rgba(255, 255, 255, 0.25);
+  --border-hover: rgba(255, 255, 255, 0.5);
 
   /* Nav */
-  --nav-bg: rgba(255, 255, 255, 0.04);
-  --nav-bg-scrolled: rgba(0, 0, 0, 0.85);
-  --nav-border: rgba(255, 255, 255, 0.12);
-  --nav-active-bg: rgba(255, 255, 255, 0.12);
-  --nav-divider: rgba(255, 255, 255, 0.15);
+  --nav-bg: rgba(255, 255, 255, 0.08);
+  --nav-bg-scrolled: rgba(0, 0, 0, 0.9);
+  --nav-border: rgba(255, 255, 255, 0.2);
+  --nav-active-bg: rgba(255, 255, 255, 0.15);
+  --nav-divider: rgba(255, 255, 255, 0.25);
 
   /* Glass cards */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-bg-hover: rgba(255, 255, 255, 0.06);
-  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  --glass-shadow-hover: 0 8px 40px rgba(255, 255, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --glass-shadow-hover: 0 8px 40px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 
   /* Buttons */
   --btn-primary-bg: #ffffff;
@@ -57,7 +57,7 @@ html {
 
   /* Skills */
   --logo-color: #ffffff;
-  --logo-label: rgba(255, 255, 255, 0.55);
+  --logo-label: rgba(255, 255, 255, 0.85);
   --fade-color: #000000;
 
   /* Scrollbar */
