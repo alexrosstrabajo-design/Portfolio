@@ -69,11 +69,11 @@ html {
 [data-theme="light"] {
   --bg: #efefef;
   --fg: #0a0a0a;
-  --fg-muted: rgba(0, 0, 0, 0.65);
-  --fg-subtle: rgba(0, 0, 0, 0.5);
-  --fg-faint: rgba(0, 0, 0, 0.35);
-  --fg-dim: rgba(0, 0, 0, 0.22);
-  --fg-ghost: rgba(0, 0, 0, 0.1);
+  --fg-muted: rgba(0, 0, 0, 0.75);
+  --fg-subtle: rgba(0, 0, 0, 0.62);
+  --fg-faint: rgba(0, 0, 0, 0.52);
+  --fg-dim: rgba(0, 0, 0, 0.42);
+  --fg-ghost: rgba(0, 0, 0, 0.22);
   --border: rgba(0, 0, 0, 0.12);
   --border-hover: rgba(0, 0, 0, 0.35);
 
@@ -111,7 +111,7 @@ html {
 
   /* Skills */
   --logo-color: #0a0a0a;
-  --logo-label: rgba(0, 0, 0, 0.35);
+  --logo-label: rgba(0, 0, 0, 0.6);
   --fade-color: #efefef;
 
   /* Scrollbar */
