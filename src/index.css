@@ -7,6 +7,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Hard fallback: prevents pure-black void if CSS vars fail (e.g. during auto-translate DOM mutations) */
+  background: #050508;
+  color: #ffffff;
 }
 
 /* ── Dark mode (default) ── */
