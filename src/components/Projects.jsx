@@ -77,21 +77,35 @@ const Projects = ({ lang }) => {
               </div>
 
               <div style={{ display: "flex", gap: "10px" }}>
-                <a href={p.link} className="cursor-target" style={{
-                  padding: "8px 18px",
-                  background: "var(--btn-primary-bg)", color: "var(--btn-primary-fg)",
-                  borderRadius: "50px", textDecoration: "none",
-                  fontFamily: "'Space Mono', monospace", fontSize: "11px", fontWeight: 700,
-                }}>
+                <a
+                  href={p.link}
+                  target={p.link.startsWith("http") ? "_blank" : undefined}
+                  rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="cursor-target"
+                  aria-label={lang === "en" ? `Visit ${p.name} Live Site` : `Visitar el sitio en vivo de ${p.name}`}
+                  style={{
+                    padding: "8px 18px",
+                    background: "var(--btn-primary-bg)", color: "var(--btn-primary-fg)",
+                    borderRadius: "50px", textDecoration: "none",
+                    fontFamily: "'Space Mono', monospace", fontSize: "11px", fontWeight: 700,
+                  }}
+                >
                   {tx.live}
                 </a>
-                <a href={p.github} className="cursor-target" style={{
-                  padding: "8px 18px", background: "transparent",
-                  border: "1px solid var(--btn-secondary-border)",
-                  borderRadius: "50px", color: "var(--fg-muted)",
-                  textDecoration: "none", fontFamily: "'Space Mono', monospace",
-                  fontSize: "11px",
-                }}>
+                <a
+                  href={p.github}
+                  target={p.github.startsWith("http") ? "_blank" : undefined}
+                  rel={p.github.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="cursor-target"
+                  aria-label={lang === "en" ? `View ${p.name} Source Code on GitHub` : `Ver el código fuente de ${p.name} en GitHub`}
+                  style={{
+                    padding: "8px 18px", background: "transparent",
+                    border: "1px solid var(--btn-secondary-border)",
+                    borderRadius: "50px", color: "var(--fg-muted)",
+                    textDecoration: "none", fontFamily: "'Space Mono', monospace",
+                    fontSize: "11px",
+                  }}
+                >
                   GitHub
                 </a>
               </div>

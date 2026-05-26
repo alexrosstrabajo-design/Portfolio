@@ -43,8 +43,14 @@ const Contact = ({ lang }) => {
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           {links.map(({ label, value, href, icon }) => (
             <GlassCard key={label.en} className="cursor-target" style={{ padding: "20px 28px" }}>
-              <a href={href} style={{ display: "flex", alignItems: "center", gap: "16px", textDecoration: "none" }}>
-                <span style={{ fontSize: "20px" }}>{icon}</span>
+              <a
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                aria-label={lang === "en" ? `Open ${label.en} link to ${value}` : `Abrir enlace de ${label[lang]} a ${value}`}
+                style={{ display: "flex", alignItems: "center", gap: "16px", textDecoration: "none" }}
+              >
+                <span role="img" aria-hidden="true" style={{ fontSize: "20px" }}>{icon}</span>
                 <div style={{ textAlign: "left" }}>
                   <div style={{
                     fontFamily: "'Space Mono', monospace", fontSize: "10px",
@@ -56,7 +62,7 @@ const Contact = ({ lang }) => {
                     {value}
                   </div>
                 </div>
-                <span style={{ marginLeft: "auto", color: "var(--fg-faint)", fontSize: "16px" }}>↗</span>
+                <span aria-hidden="true" style={{ marginLeft: "auto", color: "var(--fg-faint)", fontSize: "16px" }}>↗</span>
               </a>
             </GlassCard>
           ))}

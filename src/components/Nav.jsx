@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import t from "../translations";
 
 const SunIcon = () => (
-  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="5"/>
     <line x1="12" y1="1" x2="12" y2="3"/>
@@ -17,14 +17,14 @@ const SunIcon = () => (
 );
 
 const MoonIcon = () => (
-  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
   </svg>
 );
 
 const MenuIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="3" y1="12" x2="21" y2="12"></line>
     <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -33,7 +33,7 @@ const MenuIcon = () => (
 );
 
 const XIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="18" y1="6" x2="6" y2="18"></line>
     <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -145,6 +145,7 @@ const Nav = ({ active, setActive, isDark, setIsDark, lang, setLang }) => {
             onMouseEnter={() => setHoveredLang(true)}
             onMouseLeave={() => setHoveredLang(false)}
             className="cursor-target"
+            aria-label={lang === "en" ? "Switch language to Spanish" : "Cambiar idioma a Inglés"}
             style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               color: hoveredLang ? "var(--fg)" : "var(--fg-muted)",
@@ -164,6 +165,7 @@ const Nav = ({ active, setActive, isDark, setIsDark, lang, setLang }) => {
             onMouseEnter={() => setHoveredToggle(true)}
             onMouseLeave={() => setHoveredToggle(false)}
             className="cursor-target"
+            aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
             style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               color: hoveredToggle ? "var(--fg)" : "var(--fg-muted)",
@@ -178,6 +180,7 @@ const Nav = ({ active, setActive, isDark, setIsDark, lang, setLang }) => {
           {isMobile && (
             <button
               onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
               style={{
                 display: "flex", alignItems: "center", justifyContent: "center",
                 color: "var(--fg)", background: "transparent", border: "none",

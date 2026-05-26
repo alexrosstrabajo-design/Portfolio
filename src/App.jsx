@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import "./index.css";
 
 import TargetCursor from "./components/TargetCursor";
-import Beams from "./components/Beams";
+const Beams = lazy(() => import("./components/Beams"));
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -53,8 +53,10 @@ export default function App() {
         transition: "opacity 0.5s ease",
         pointerEvents: "none",
       }}>
-        <Beams beamWidth={1} beamHeight={30} beamNumber={30}
-          lightColor="#ff0000ff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+        <Suspense fallback={null}>
+          <Beams beamWidth={1} beamHeight={30} beamNumber={30}
+            lightColor="#ff0000ff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+        </Suspense>
       </div>
 
       {/* Fixed bottom blur — elements fade in as user scrolls up */}
