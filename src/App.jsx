@@ -1,7 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import "./index.css";
 
-import TargetCursor from "./components/TargetCursor";
+const TargetCursor = lazy(() => import("./components/TargetCursor"));
 const Beams = lazy(() => import("./components/Beams"));
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -15,6 +15,7 @@ export default function App() {
   const [active, setActive] = useState("Home");
   const [isDark, setIsDark] = useState(true);
   const [lang, setLang] = useState("en");
+  const [deferredReady, setDeferredReady] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
@@ -23,6 +24,17 @@ export default function App() {
   useEffect(() => {
     document.documentElement.setAttribute("lang", lang);
   }, [lang]);
+
+  // Defer heavy components (TargetCursor + Beams) until after first paint + idle
+  useEffect(() => {
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(() => setDeferredReady(true), { timeout: 1500 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setDeferredReady(true), 200);
+      return () => clearTimeout(id);
+    }
+  }, []);
 
   useEffect(() => {
     const ids = ["home", "about", "projects", "skills", "contact"];
@@ -47,7 +59,11 @@ export default function App() {
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
 
-      <TargetCursor spinDuration={2} hoverDuration={0.2} hideDefaultCursor parallaxOn />
+      {deferredReady && (
+        <Suspense fallback={null}>
+          <TargetCursor spinDuration={2} hoverDuration={0.2} hideDefaultCursor parallaxOn />
+        </Suspense>
+      )}
 
       {/* Beams background */}
       <div style={{
@@ -57,19 +73,21 @@ export default function App() {
         transition: "opacity 0.5s ease",
         pointerEvents: "none",
       }}>
-        <Suspense fallback={null}>
-          <Beams beamWidth={1} beamHeight={30} beamNumber={30}
-            lightColor="#ff0000ff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
-        </Suspense>
+        {deferredReady && (
+          <Suspense fallback={null}>
+            <Beams beamWidth={1} beamHeight={30} beamNumber={30}
+              lightColor="#ff0000ff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+          </Suspense>
+        )}
       </div>
 
-      {/* Fixed bottom blur — elements fade in as user scrolls up */}
+      {/* Fixed bottom blur */}
       <GradualBlur
         target="page"
         position="bottom"
         height="5rem"
         strength={2.5}
-        divCount={6}
+        divCount={4}
         curve="bezier"
         exponential
         opacity={1}

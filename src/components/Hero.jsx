@@ -3,12 +3,9 @@ import t from "../translations";
 
 const Hero = ({ lang }) => {
   const tx = t[lang].hero;
-  const [visible, setVisible]     = useState(false);
   const [roleIdx, setRoleIdx]     = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping]       = useState(true);
-
-  useEffect(() => { setTimeout(() => setVisible(true), 100); }, []);
 
   useEffect(() => {
     setRoleIdx(0);
@@ -47,12 +44,10 @@ const Hero = ({ lang }) => {
     }}>
 
       {/* Badge */}
-      <div style={{
+      <div className="hero-entrance hero-entrance-1" style={{
         display: "inline-flex", alignItems: "center", gap: "8px",
         background: "var(--badge-bg)", border: "1px solid var(--badge-border)",
         borderRadius: "50px", padding: "6px 18px", marginBottom: "32px",
-        opacity: visible ? 1 : 0, transform: visible ? "none" : "translateY(16px)",
-        transition: "all 0.8s ease",
         fontFamily: "'Space Mono', monospace", fontSize: "11px",
         color: "var(--fg-muted)", letterSpacing: "2px",
       }}>
@@ -64,41 +59,36 @@ const Hero = ({ lang }) => {
         {tx.badge}
       </div>
 
-      {/* Name */}
-      <h1 style={{
+      {/* Name — LCP element: renders at full opacity immediately */}
+      <h1 className="hero-entrance hero-entrance-2" style={{
         fontFamily: "'Space Mono', monospace",
         fontSize: "clamp(44px, 9vw, 96px)", fontWeight: 700,
         color: "var(--fg)", margin: "0 0 6px", lineHeight: 1.0, letterSpacing: "-2px",
-        opacity: visible ? 1 : 0, transform: visible ? "none" : "translateY(24px)",
-        transition: "all 0.9s ease 0.15s",
       }}>
         Alexander<br />
         <span style={{ color: "var(--fg-muted)" }}>Ross</span>
       </h1>
 
       {/* Typewriter */}
-      <p style={{
+      <p className="hero-entrance hero-entrance-3" style={{
         fontFamily: "'DM Mono', monospace", fontSize: "clamp(15px,2.5vw,22px)",
         color: "var(--fg-muted)", margin: "16px 0 20px", minHeight: "30px",
-        opacity: visible ? 1 : 0, transition: "opacity 0.9s ease 0.3s",
       }}>
         {displayed}
         <span style={{ color: "var(--fg)", animation: "blink 1s infinite", fontWeight: 300 }}>|</span>
       </p>
 
       {/* Bio */}
-      <p style={{
+      <p className="hero-entrance hero-entrance-4" style={{
         color: "var(--fg-subtle)", fontFamily: "'DM Mono', monospace",
         fontSize: "14px", maxWidth: "440px", lineHeight: 1.9, marginBottom: "44px",
-        opacity: visible ? 1 : 0, transition: "opacity 0.9s ease 0.45s",
       }}>
         {bioLines[0]}<br />{bioLines[1]}
       </p>
 
       {/* CTA Buttons */}
-      <div style={{
+      <div className="hero-entrance hero-entrance-5" style={{
         display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center",
-        opacity: visible ? 1 : 0, transition: "opacity 0.9s ease 0.6s",
       }}>
         <a href="#contact" className="cursor-target" style={{
           padding: "13px 30px",
@@ -125,6 +115,18 @@ const Hero = ({ lang }) => {
       <style>{`
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes pulse { 0%,100%{box-shadow:0 0 6px currentColor} 50%{box-shadow:0 0 16px currentColor} }
+        @keyframes heroFadeIn {
+          from { opacity: 0; transform: translateY(16px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-entrance {
+          animation: heroFadeIn 0.8s ease both;
+        }
+        .hero-entrance-1 { animation-delay: 0.05s; }
+        .hero-entrance-2 { animation-delay: 0.12s; }
+        .hero-entrance-3 { animation-delay: 0.22s; }
+        .hero-entrance-4 { animation-delay: 0.32s; }
+        .hero-entrance-5 { animation-delay: 0.42s; }
       `}</style>
     </section>
   );
