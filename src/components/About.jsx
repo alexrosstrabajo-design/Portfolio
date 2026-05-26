@@ -47,7 +47,7 @@ const About = ({ lang }) => {
 
           {tx.cards.map(({ icon, title, desc }) => (
             <GlassCard key={title} className="cursor-target" style={{ padding: "28px" }}>
-              <div style={{ fontSize: "28px", marginBottom: "14px" }}>{icon}</div>
+              <span role="img" aria-label={title} style={{ fontSize: "28px", display: "inline-block", marginBottom: "14px" }}>{icon}</span>
               <h3 style={{
                 fontFamily: "'Space Mono', monospace", color: "var(--fg)",
                 fontSize: "14px", fontWeight: 700, marginBottom: "10px",

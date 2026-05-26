@@ -68,12 +68,12 @@ const Contact = ({ lang }) => {
           ))}
         </div>
 
-        <p style={{
+        <footer style={{
           marginTop: "64px", fontFamily: "'Space Mono', monospace",
           fontSize: "10px", color: "var(--fg-ghost)", letterSpacing: "1.5px",
         }}>
           {tx.footer}
-        </p>
+        </footer>
       </div>
     </section>
   );
