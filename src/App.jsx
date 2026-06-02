@@ -1,5 +1,4 @@
 import { useState, useEffect, lazy, Suspense } from "react";
-import "./index.css";
 
 const TargetCursor = lazy(() => import("./components/TargetCursor"));
 const Beams = lazy(() => import("./components/Beams"));
