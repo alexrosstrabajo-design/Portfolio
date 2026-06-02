@@ -7,7 +7,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import { degToRad } from 'three/src/math/MathUtils.js';
 
-import './Beams.css';
+
 
 function extendMaterial(BaseMaterial, cfg) {
   const physical = THREE.ShaderLib.physical;
@@ -221,6 +221,8 @@ const Beams = ({
     </CanvasWrapper>
   );
 };
+
+// Styles merged into global `src/index.css` for SSR safety
 
 function createStackedPlanesBufferGeometry(n, width, height, spacing, heightSegments) {
   const geometry = new THREE.BufferGeometry();

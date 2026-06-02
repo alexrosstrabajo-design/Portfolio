@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
-import './LogoLoop.css';
 
 const ANIMATION_CONFIG = { SMOOTH_TAU: 0.25, MIN_COPIES: 2, COPY_HEADROOM: 2 };
 
@@ -134,6 +133,7 @@ export const LogoLoop = memo(
     style
   }) => {
     const containerRef = useRef(null);
+    // Styles merged into global `src/index.css` for SSR safety
     const trackRef = useRef(null);
     const seqRef = useRef(null);
 

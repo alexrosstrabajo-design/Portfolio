@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 
-import './GradualBlur.css';
 
 const DEFAULT_CONFIG = {
   position: 'bottom',
@@ -251,3 +250,5 @@ const injectStyles = () => {
 if (typeof document !== 'undefined') {
   injectStyles();
 }
+
+// Styles merged into global `src/index.css` for SSR safety

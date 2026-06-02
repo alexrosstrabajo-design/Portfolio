@@ -53,9 +53,11 @@ const Nav = ({ active, setActive, isDark, setIsDark, lang, setLang }) => {
   const [hoveredToggle, setHoveredToggle] = useState(false);
   const [hoveredLang, setHoveredLang] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isClient = typeof window !== 'undefined';
+  const [isMobile, setIsMobile] = useState(isClient ? window.innerWidth < 768 : false);
 
   useEffect(() => {
+    if (!isClient) return;
     const handleScroll = () => setScrolled(window.scrollY > 30);
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
@@ -69,7 +71,7 @@ const Nav = ({ active, setActive, isDark, setIsDark, lang, setLang }) => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isClient]);
 
   const links    = t[lang].nav.links;
   const sections = ["home", "about", "projects", "skills", "contact"];
@@ -226,4 +228,4 @@ const Nav = ({ active, setActive, isDark, setIsDark, lang, setLang }) => {
   );
 };
 
-export default Nav;
+export default Nav;
