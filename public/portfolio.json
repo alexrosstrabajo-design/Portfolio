@@ -1,0 +1,55 @@
+{
+  "name": "Alexander Ross",
+  "tagline": "Student at ITESA · Building secure, efficient web applications",
+  "roles": ["Web Developer", "Database Designer", "Pentester"],
+  "about": {
+    "title": "Who I Am",
+    "bio": "Student at ITESA passionate about web development, database architecture, and cybersecurity. I enjoy turning complex problems into clean, secure, and scalable solutions. When I'm not coding, you'll find me exploring security techniques, contributing to open-source, or leveling up in ethical hacking.",
+    "cards": [
+      { "icon": "🌐", "title": "Web Development", "desc": "Building modern, responsive applications with React and cutting-edge frontend tooling." },
+      { "icon": "🗄️", "title": "Database Design", "desc": "Architecting efficient, normalized schemas with SQL backends and Python APIs." },
+      { "icon": "🔒", "title": "Pentesting", "desc": "Identifying vulnerabilities, network scanning, and ethical hacking practices." }
+    ]
+  },
+  "skills": {
+    "frontend": ["React", "JavaScript", "CSS", "HTML", "Vite", "Three.js"],
+    "backend": ["Python", "Flask", "SQL"],
+    "tools": ["Git", "Bootstrap", "Tailwind"]
+  },
+  "projects": [
+    {
+      "name": "TextNode",
+      "tagline": "Note Taking App",
+      "description": "A modern note-taking app to organize thoughts efficiently. Clean UI with full CRUD.",
+      "tech": ["JavaScript", "React", "Web App"],
+      "url": "https://Text-node.vercel.app",
+      "github": "https://github.com/alexrosstrabajo-design/TextNode"
+    },
+    {
+      "name": "Automator AI",
+      "tagline": "AI Automation Platform",
+      "description": "An AI-powered conversational platform connected to Automator, featuring a sleek 3D interface built with Three.js.",
+      "tech": ["React", "Three.js", "OpenAI", "Tailwind"],
+      "url": "https://agoar.vercel.app",
+      "github": "https://github.com/alexrosstrabajo-design/ai-chat"
+    },
+    {
+      "name": "InvDB",
+      "tagline": "Database Management System",
+      "description": "Inventory database with a Flask interface, SQL backend, and Bootstrap UI.",
+      "tech": ["SQL", "Python", "Flask", "Bootstrap"],
+      "url": "#",
+      "github": "#"
+    }
+  ],
+  "contact": {
+    "email": "alexrosstrabajo@gmail.com",
+    "github": "https://github.com/alexrosstrabajo-design",
+    "linkedin": "https://linkedin.com/in/alexrosstrabajo"
+  },
+  "meta": {
+    "title": "Alexander Ross - Portfolio",
+    "description": "Student at ITESA building secure, efficient, and modern web applications with React, Three.js, and Python.",
+    "builtWith": ["React", "Vite", "Three.js"]
+  }
+}
