@@ -67,7 +67,7 @@ export default function App() {
       {/* Beams background */}
       <div style={{
         position: "fixed", inset: 0, zIndex: 0,
-        background: "rgb(255, 0, 0)", overflow: "hidden",
+        background: "rgb(3, 3, 3)", overflow: "hidden",
         opacity: isDark ? 1 : 0,
         transition: "opacity 0.5s ease",
         pointerEvents: "none",
@@ -75,7 +75,7 @@ export default function App() {
         {deferredReady && (
           <Suspense fallback={null}>
             <Beams beamWidth={1} beamHeight={30} beamNumber={30}
-              lightColor="#ff0000ff" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+              lightColor="rgb(248, 8, 8)" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
           </Suspense>
         )}
       </div>
