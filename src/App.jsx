@@ -67,7 +67,7 @@ export default function App() {
       {/* Beams background */}
       <div style={{
         position: "fixed", inset: 0, zIndex: 0,
-        background: "#000000ff", overflow: "hidden",
+        background: "rgb(255, 0, 0)", overflow: "hidden",
         opacity: isDark ? 1 : 0,
         transition: "opacity 0.5s ease",
         pointerEvents: "none",
