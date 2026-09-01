@@ -75,7 +75,7 @@ export default function App() {
         {deferredReady && (
           <Suspense fallback={null}>
             <Beams beamWidth={1} beamHeight={30} beamNumber={30}
-              lightColor="rgb(248, 8, 8)" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
+              lightColor="rgb(255, 255, 255)" speed={2} noiseIntensity={4} scale={0.31} rotation={87.5} />
           </Suspense>
         )}
       </div>
