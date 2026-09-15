@@ -31,7 +31,7 @@ const t = {
       items: [
         { name: "TextNode", tagline: "Note Taking App",           desc: "A modern note-taking app to organize thoughts efficiently. Clean UI with full CRUD.", tags: ["JavaScript","React","Web App"], link: "https://Text-node.vercel.app", github: "https://github.com/alexrosstrabajo-design/TextNode" },
         { name: "Automator AI", tagline: "AI Automation Platform",      desc: "An AI-powered conversational platform connected to Automator, featuring a sleek 3D interface built with Three.js.", tags: ["React","Three.js","OpenAI","Tailwind"], link: "https://agoar.vercel.app", github: "https://github.com/alexrosstrabajo-design/ai-chat" },
-        { name: "Birdie", tagline: "2D Arcade Game",              desc: "A 2D arcade web game — drive a little blue bird's taxi, pick up passengers and dodge potholes before the tank runs dry. 22 unlockable hats, a day/night cycle, and global leaderboards.", tags: ["React","TypeScript","Canvas","Vercel","Redis"], link: "https://pajarito.vercel.app", github: "https://github.com/alexrosstrabajo-design/pajarito" },
+        { name: "Birdie", tagline: "2D Arcade Game",              desc: "A 2D arcade web game — drive a little blue bird's taxi, pick up passengers and dodge potholes before the tank runs dry. 22 unlockable hats, a day/night cycle, and global leaderboards.", tags: ["React","TypeScript","Canvas","Vercel","Redis"], link: "https://playbirdie.vercel.app", github: "https://github.com/alexrosstrabajo-design/pajarito" },
       ],
     },
     skills: {
@@ -80,7 +80,7 @@ const t = {
       items: [
         { name: "TextNode", tagline: "App de Notas",               desc: "App moderna de toma de notas con CRUD completo y UI limpia.", tags: ["JavaScript","React","Web App"], link: "https://Text-node.vercel.app", github: "https://github.com/alexrosstrabajo-design/TextNode" },
         { name: "Automator AI", tagline: "Plataforma de Automatización IA",   desc: "Una plataforma conversacional impulsada por IA conectada a Automator, con una interfaz 3D moderna construida con Three.js.", tags: ["React","Three.js","OpenAI","Tailwind"], link: "https://agoar.vercel.app", github: "https://github.com/alexrosstrabajo-design/ai-chat" },
-        { name: "Birdie", tagline: "Juego Arcade 2D",             desc: "Juego arcade 2D — maneja el taxi de un pajarito azul, recoge pasajeros y esquiva hoyos antes de quedarte sin gasolina. 22 sombreros desbloqueables, ciclo día/noche y marcadores globales.", tags: ["React","TypeScript","Canvas","Vercel","Redis"], link: "https://pajarito.vercel.app", github: "https://github.com/alexrosstrabajo-design/pajarito" },
+        { name: "Birdie", tagline: "Juego Arcade 2D",             desc: "Juego arcade 2D — maneja el taxi de un pajarito azul, recoge pasajeros y esquiva hoyos antes de quedarte sin gasolina. 22 sombreros desbloqueables, ciclo día/noche y marcadores globales.", tags: ["React","TypeScript","Canvas","Vercel","Redis"], link: "https://playbirdie.vercel.app", github: "https://github.com/alexrosstrabajo-design/pajarito" },
       ],
     },
     skills: {
