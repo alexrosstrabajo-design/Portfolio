@@ -76,6 +76,7 @@ const Projects = ({ lang }) => {
                 ))}
               </div>
 
+              {!p.comingSoon && (
               <div style={{ display: "flex", gap: "10px" }}>
                 <a
                   href={p.link}
@@ -109,6 +110,7 @@ const Projects = ({ lang }) => {
                   GitHub
                 </a>
               </div>
+              )}
             </GlassCard>
           ))}
         </div>

@@ -15,7 +15,7 @@ export default class ErrorBoundary extends Component {
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error) {
     // Only auto-recover from hydration/reconciliation errors (translation-induced)
     const isTranslationError =
       error?.message?.includes('Node') ||

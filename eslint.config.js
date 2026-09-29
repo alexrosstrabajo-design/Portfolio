@@ -10,7 +10,7 @@ export default defineConfig([
     files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
-      reactHooks.configs.flat.recommended,
+      reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
     ],
     languageOptions: {
@@ -25,5 +25,10 @@ export default defineConfig([
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
+  },
+  {
+    // vite-plugin-ssg requires pages to export ssgOptions/context alongside the component
+    files: ['src/pages/**/*.jsx'],
+    rules: { 'react-refresh/only-export-components': 'off' },
   },
 ])
