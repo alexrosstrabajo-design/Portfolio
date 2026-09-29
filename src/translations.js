@@ -44,7 +44,7 @@ const t = {
       label: "CONTACT",
       title: "Let's Work Together",
       subtitle: "Looking for new opportunities. Whether you have a project in mind or just want to say hi — my inbox is always open.",
-      footer: "© 2025 ALEXANDER ROSS — BUILT WITH ♥",
+      footer: "© 2026 ALEXANDER ROSS — BUILT WITH ♥",
     },
   },
 
@@ -93,7 +93,7 @@ const t = {
       label: "CONTACTO",
       title: "Trabajemos juntos",
       subtitle: "Estoy buscando nuevas oportunidades. Ya sea que tengas un proyecto en mente o simplemente quieras saludar — mi bandeja siempre está abierta.",
-      footer: "© 2025 ALEXANDER ROSS — HECHO CON ♥",
+      footer: "© 2026 ALEXANDER ROSS — HECHO CON ♥",
     },
   },
 };
